@@ -6,10 +6,10 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "carbon-code-mirror": "file:..",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-scripts": "file:../node_modules/react-scripts",
+    "carbon-react-code-mirror": "file:..", 
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -21,7 +21,10 @@ const example = () => {
 
 ## Optional Props
 
-Carbon Code Mirror accepts two optional props:
+Carbon Code Mirror accepts the following optional props:
 
 - `className` - string - Classnames to apply to the code mirror pane
 - `readOnly` - boolean - Defaults to `true`
+- `light` - boolean - Use light mode, defaults to `false`
+- `children` - node - React nodes to render within the code mirror container
+- `wrapperClassName` - string - optionally set the classname for the div surrounding code mirror window

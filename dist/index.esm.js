@@ -91,25 +91,91 @@ const carbonDesignCodemirrorTheme = createTheme({
     color: "#161616"
   }]
 });
+const codeMirrorDark = createTheme({
+  theme: "dark",
+  settings: {
+    background: "#262626",
+    foreground: "#c6c6c6",
+    caret: "#fffffff",
+    selection: "#036dd626",
+    selectionMatch: "#036dd626",
+    lineHighlight: "#8a91991a",
+    gutterBackground: "#262626",
+    gutterForeground: "#fffffff"
+  },
+  styles: [{
+    tag: [tags.standard(tags.tagName), tags.tagName],
+    color: "#7ee787"
+  }, {
+    tag: [tags.comment, tags.bracket],
+    color: "#8b949e"
+  }, {
+    tag: [tags.className, tags.propertyName],
+    color: "#d2a8ff"
+  }, {
+    tag: [tags.variableName, tags.attributeName, tags.number, tags.operator],
+    color: "#79c0ff"
+  }, {
+    tag: [tags.keyword, tags.typeName, tags.typeOperator, tags.typeName],
+    color: "#ff7b72"
+  }, {
+    tag: [tags.string, tags.meta, tags.regexp],
+    color: "#a5d6ff"
+  }, {
+    tag: [tags.name, tags.quote],
+    color: "#7ee787"
+  }, {
+    tag: [tags.heading],
+    color: "#d2a8ff",
+    fontWeight: "bold"
+  }, {
+    tag: [tags.emphasis],
+    color: "#d2a8ff",
+    fontStyle: "italic"
+  }, {
+    tag: [tags.deleted],
+    color: "#ffdcd7",
+    backgroundColor: "ffeef0"
+  }, {
+    tag: [tags.atom, tags.bool, tags.special(tags.variableName)],
+    color: "#ffab70"
+  }, {
+    tag: tags.link,
+    textDecoration: "underline"
+  }, {
+    tag: tags.strikethrough,
+    textDecoration: "line-through"
+  }, {
+    tag: tags.invalid,
+    color: "#f97583"
+  }]
+});
 const CarbonCodeMirror = props => {
-  return /*#__PURE__*/React.createElement(CodeMirror, {
+  return /*#__PURE__*/React.createElement("div", {
+    className: props.wrapperClassName
+  }, /*#__PURE__*/React.createElement(CodeMirror, {
     className: props.className,
     readOnly: props.readOnly,
     value: props.code,
     extensions: [javascript({
       jsx: true
     })],
-    theme: carbonDesignCodemirrorTheme
-  });
+    theme: props.light ? carbonDesignCodemirrorTheme : codeMirrorDark
+  }, props.children ? props.children : ""));
 };
 CarbonCodeMirror.defaultProps = {
   className: "left-text",
-  readOnly: true
+  readOnly: true,
+  light: false,
+  wrapperClassName: ""
 };
 CarbonCodeMirror.propTypes = {
   className: PropTypes.string.isRequired,
   readOnly: PropTypes.bool.isRequired,
-  code: PropTypes.string.isRequired
+  code: PropTypes.string.isRequired,
+  light: PropTypes.bool.isRequired,
+  children: PropTypes.node,
+  wrapperClassName: PropTypes.string.isRequired
 };
 
 export { CarbonCodeMirror };
