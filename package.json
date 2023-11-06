@@ -1,6 +1,6 @@
 {
   "name": "carbon-react-code-mirror",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -10,13 +10,12 @@
     "Isaac Eichelberger"
   ],
   "dependencies": {
-    "@codemirror/lang-javascript": "^6.1.4",
-    "@lezer/highlight": "^1.1.4",
-    "@uiw/codemirror-themes": "^4.19.11",
-    "@uiw/react-codemirror": "^4.19.11",
+    "@codemirror/lang-javascript": "^6.2.1",
+    "@lezer/highlight": "^1.1.6",
+    "@uiw/codemirror-themes": "^4.21.20",
+    "@uiw/react-codemirror": "^4.21.20",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "peerDependencies": {
